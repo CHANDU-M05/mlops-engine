@@ -56,7 +56,7 @@ def prepare_dictionaries(df: pd.DataFrame):
 
 
 def load_model(run_id):
-    logged_model = f's3://mlflow-models-alexey/1/{run_id}/artifacts/model'
+    logged_model = f's3://mlflow-models/1/{run_id}/artifacts/model'
     model = mlflow.pyfunc.load_model(logged_model)
     return model
 
@@ -101,7 +101,7 @@ def get_paths(run_date, taxi_type, run_id):
     month = prev_month.month 
 
     input_file = f's3://nyc-tlc/trip data/{taxi_type}_tripdata_{year:04d}-{month:02d}.parquet'
-    output_file = f's3://nyc-duration-prediction-alexey/taxi_type={taxi_type}/year={year:04d}/month={month:02d}/{run_id}.parquet'
+    output_file = f's3://nyc-duration-prediction-chandu/taxi_type={taxi_type}/year={year:04d}/month={month:02d}/{run_id}.parquet'
 
     return input_file, output_file
 

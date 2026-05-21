@@ -11,7 +11,7 @@ Starting the MLflow server with S3:
 ```bash
 mlflow server \
     --backend-store-uri=sqlite:///mlflow.db \
-    --default-artifact-root=s3://mlflow-models-alexey/
+    --default-artifact-root=s3://mlflow-models/
 ```
 
 Downloading the artifact
